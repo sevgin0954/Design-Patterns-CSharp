@@ -10,7 +10,7 @@ namespace CommandPattern
 
         private int volume = 0;
 
-        public int Volume
+        internal int Volume
         {
             get
             {

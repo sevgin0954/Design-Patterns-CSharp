@@ -7,7 +7,7 @@ namespace ObserverPattern
     {
         private readonly Newspaper newspaper;
 
-        public Subscriber(Newspaper newspaper)
+        internal Subscriber(Newspaper newspaper)
         {
             this.newspaper = newspaper;
             this.newspaper.Add(this);

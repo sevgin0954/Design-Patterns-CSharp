@@ -5,14 +5,14 @@ namespace FactoryPattern
 {
     internal class BMWCar : ICar
     {
-        public BMWCar(string engine, int doortsCount)
+        internal BMWCar(string engine, int doortsCount)
         {
             Engine = engine;
             DoortsCount = doortsCount;
         }
 
-        public string Engine { get; }
-        public int DoortsCount { get; }
+        internal string Engine { get; }
+        internal int DoortsCount { get; }
 
         public void Crash()
         {

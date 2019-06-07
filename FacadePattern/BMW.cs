@@ -4,32 +4,32 @@ namespace FacadePattern
 {
     internal class BMW
     {
-        public void Start()
+        internal void Start()
         {
             Console.WriteLine("brrrrBRRRBRBRBRBBR BRRBBR RBRB");
         }
 
-        public void Stop()
+        internal void Stop()
         {
             Console.WriteLine("stoping");
         }
 
-        public void SteerLeft()
+        internal void SteerLeft()
         {
             Console.WriteLine("steering right");
         }
 
-        public void SteerRight()
+        internal void SteerRight()
         {
             Console.WriteLine("steering left");
         }
 
-        public void TurnLeftBlinker()
+        internal void TurnLeftBlinker()
         {
             throw new InvalidOperationException();
         }
 
-        public void TurnRightBlinker()
+        internal void TurnRightBlinker()
         {
             throw new InvalidOperationException();
         }

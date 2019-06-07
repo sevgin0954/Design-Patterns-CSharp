@@ -5,7 +5,7 @@ namespace DecoratorPattern.Options
 {
     internal class Blinkers : OptionDecorator
     {
-        public Blinkers(ICar car)
+        internal Blinkers(ICar car)
             : base(car) { }
 
         public override decimal Price()

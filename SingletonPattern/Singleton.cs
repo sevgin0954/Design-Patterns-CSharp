@@ -1,6 +1,6 @@
 ﻿namespace SingletonPattern
 {
-    public class Singleton
+    internal class Singleton
     {
         private Singleton instance = null;
         private object padlock = new object();
@@ -8,7 +8,7 @@
         private Singleton() { }
 
 
-        public Singleton GetInstance
+        internal Singleton GetInstance
         {
             get
             {

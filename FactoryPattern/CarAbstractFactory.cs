@@ -6,7 +6,7 @@ namespace FactoryPattern
 {
     internal static class CarAbstractFactory
     {
-        public static ICarFactory CreateCar(string carBrand)
+        internal static ICarFactory CreateCar(string carBrand)
         {
             if (carBrand == "bmw")
             {

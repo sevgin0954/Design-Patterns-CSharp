@@ -5,7 +5,7 @@ namespace DecoratorPattern.Options
 {
     internal class CarbonHood : OptionDecorator
     {
-        public CarbonHood(ICar car)
+        internal CarbonHood(ICar car)
             : base(car) { }
 
         public override decimal Price()

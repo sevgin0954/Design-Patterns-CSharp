@@ -8,7 +8,7 @@ namespace ObserverPattern
         private readonly IList<IObserver> subcribers = new List<IObserver>();
         private string news;
 
-        public string News
+        internal string News
         {
             get
             {

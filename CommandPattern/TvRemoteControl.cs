@@ -8,7 +8,7 @@ namespace CommandPattern
         private readonly ICommand[] buttons;
         private ICommand previsionCommand = new NoCommand();
 
-        public TVRemoteControl(int buttonsCount)
+        internal TVRemoteControl(int buttonsCount)
         {
             this.buttons = new ICommand[buttonsCount];
             for (int i = 0; i < buttons.Length; i++)
@@ -17,19 +17,19 @@ namespace CommandPattern
             }
         }
 
-        public void SetButtonFunction(int buttonIndex, ICommand command)
+        internal void SetButtonFunction(int buttonIndex, ICommand command)
         {
             this.buttons[buttonIndex] = command;
         }
 
-        public void PressButton(int buttonIndex)
+        internal void PressButton(int buttonIndex)
         {
             var pressedButton = this.buttons[buttonIndex];
             pressedButton.Execute();
             this.previsionCommand = pressedButton;
         }
 
-        public void Undo()
+        internal void Undo()
         {
             this.previsionCommand.Undo();
             this.previsionCommand = new NoCommand();
