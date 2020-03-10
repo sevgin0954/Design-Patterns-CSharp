@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 using VirtualProxyPattern.Interfaces;
 
 namespace VirtualProxyPattern
@@ -10,8 +10,7 @@ namespace VirtualProxyPattern
 		public NumbersParser(int[] nums)
 		{
 			// Slow sorting
-			Array.Copy(nums, 0, sortedNumbers, 0, nums.Length);
-			Array.Sort(nums);
+			this.sortedNumbers = nums.OrderBy(n => n).ToArray();
 		}
 
 		public int GetMaxNumber()
