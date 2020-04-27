@@ -1,5 +1,6 @@
 ﻿using VisitorPattern.Interfaces;
 using VisitorPattern.Products;
+using VisitorPattern.Products.Interfaces;
 
 namespace VisitorPattern
 {
@@ -10,8 +11,7 @@ namespace VisitorPattern
 		public decimal CalculateTax(Alcohol alcohol)
 		{
 			var alcoholTax = alcohol.Price * 1.3m;
-			var alcoholTotalPrice = alcohol.Price + alcoholTax;
-			var calcoholTotalPriceWithDiscount = alcoholTotalPrice * this.DiscountMultiplier;
+			var calcoholTotalPriceWithDiscount = CalculateTotalPrice(alcoholTax, alcohol);
 
 			return calcoholTotalPriceWithDiscount;
 		}
@@ -19,8 +19,7 @@ namespace VisitorPattern
 		public decimal CalculateTax(Cigaretes cigaretes)
 		{
 			var cigaretesTax = cigaretes.Price * 1.5m;
-			var cigaretesTotalPrice = cigaretes.Price + cigaretesTax;
-			var cigaretesTotalPriceWithDiscount = cigaretesTotalPrice * this.DiscountMultiplier;
+			var cigaretesTotalPriceWithDiscount = CalculateTotalPrice(cigaretesTax, cigaretes);
 
 			return cigaretesTotalPriceWithDiscount;
 		}
@@ -28,10 +27,17 @@ namespace VisitorPattern
 		public decimal CalculateTax(Water water)
 		{
 			var waterTax = 0;
-			var waterTotalPrice = water.Price + waterTax;
-			var waterTotalPriceWithDiscount = waterTotalPrice * this.DiscountMultiplier;
+			var waterTotalPriceWithDiscount = CalculateTotalPrice(waterTax, water);
 
 			return waterTotalPriceWithDiscount;
+		}
+
+		private decimal CalculateTotalPrice(decimal tax, IProduct product)
+		{
+			var price = product.Price + tax;
+			var priceWithDiscount = price * this.DiscountMultiplier;
+
+			return priceWithDiscount;
 		}
 	}
 }
